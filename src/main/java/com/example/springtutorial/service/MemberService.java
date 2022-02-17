@@ -16,8 +16,6 @@ public class MemberService {
 
     public Long join(Member member){
         validateDuplicateMember(member);
-
-
         //null일 가능성이 있으면 optional;
 
         memberRepository.save(member);

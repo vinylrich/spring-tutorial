@@ -1,3 +1,5 @@
+package com.example.springtutorial.repository;
+
 import com.example.springtutorial.domain.Member;
 import com.example.springtutorial.repository.MemoryMemberRepository;
 import com.example.springtutorial.service.MemberService;

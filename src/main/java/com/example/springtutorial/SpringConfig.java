@@ -11,6 +11,8 @@ import javax.sql.DataSource;
 
 @Configuration
 public class SpringConfig {
+
+    //수동으로 빈 등록하는 방식(생략)
     private final DataSource dataSource;
 
     @Autowired
@@ -19,10 +21,10 @@ public class SpringConfig {
     }
     @Bean
     public MemberService MemberService() {
-        return new MemberService(MemberRepository());
+        return new MemberService(memberRepository());
     }
     @Bean
-    public MemberRepository MemberRepository() {
+    public MemberRepository memberRepository() {
         // return new MemoryMemberRepository();
         return new JdbcMemberRepository(dataSource);
     }

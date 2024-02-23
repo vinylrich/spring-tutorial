@@ -10,9 +10,14 @@ import java.util.List;
 import java.util.Optional;
 
 
-@RequiredArgsConstructor
+@Service
 public class MemberService {
     private final MemberRepository memberRepository;
+
+    @Autowired // MemberService 객체를 생성할 때, memberRepository 의존성 주입
+    public MemberService(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
 
     public Long join(Member member){
         validateDuplicateMember(member);
